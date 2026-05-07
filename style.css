@@ -851,3 +851,96 @@ html {
     }
 
 }
+
+.hero,
+.home-container,
+.main-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hero,
+    .home-container,
+    .main-container {
+
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+
+    }
+
+}
+
+.hero img,
+.profile-img {
+
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+@media (max-width: 768px) {
+
+    .hero img,
+    .profile-img {
+
+        width: 220px;
+
+    }
+
+}
+
+.hero-text,
+.text-content {
+    width: 100%;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+}
+
+.button-container,
+.social-buttons {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+
+}
+
+.button-container button,
+.social-buttons a {
+
+    min-width: 140px;
+
+}
+
+.project-card,
+.image-card,
+.hero-card {
+
+    width: 100%;
+    max-width: 100%;
+
+}
+
+body {
+    overflow-x: hidden;
+}
