@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Simran Makan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Simran Makan</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+        </ul>
+    </nav>
+
+    <section class="cert-container">
+
+        <h1>My Certificates</h1>
+
+        <div class="upload-box">
+            <input type="file" id="fileInput" accept="image/*">
+            <button onclick="addImage()">Add Certificate</button>
+        </div>
+
+        <div class="gallery" id="gallery"></div>
+
+    </section>
+
+    <!-- FULLSCREEN MODAL -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img id="modalImg">
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Simran Makan</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <div class="logo">Simran Makan</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+  </ul>
+
+</nav>
+
+<!-- MAIN SECTION -->
+<section class="projects-section">
+
+  <h1 class="project-heading">My Projects</h1>
+
+  <!-- ADD BUTTON -->
+<div class="add-project-container">
+
+    <button id="addProjectBtn" class="btn">
+        + Add Project
+    </button>
+
+</div>
+
+<!-- PROJECT POPUP -->
+<div id="projectModal" class="project-modal">
+
+    <div class="modal-content">
+
+        <h2>Add Project</h2>
+
+        <input
+            type="text"
+            id="projectName"
+            placeholder="Project Name"
+        >
+
+        <textarea
+            id="projectDescription"
+            placeholder="Project Description"
+        ></textarea>
+
+        <input
+            type="text"
+            id="githubLink"
+            placeholder="GitHub Link"
+        >
+
+        <div class="modal-buttons">
+
+            <button id="saveProjectBtn" class="btn">
+                Save
+            </button>
+
+            <button id="closeModalBtn" class="btn-outline">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- PROJECT CARDS -->
+  <div id="projectsContainer" class="projects-container">
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
