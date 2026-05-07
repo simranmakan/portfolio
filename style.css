@@ -866,6 +866,7 @@ body {
     }
 
     .photo-card img {
+        width : 200px;
         transform: scale(1.25);
         object-position: top;
     }
