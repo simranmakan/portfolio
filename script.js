@@ -193,7 +193,7 @@ closeModalBtn.addEventListener("click", () => {
 });
 
 /* SAVE PROJECT */
-saveProjectBtn.addEventListener("click", () => {
+saveProjectBtn.addEventListener("click", async () => {
 
     const projectName = document.getElementById("projectName").value;
     const projectDescription = document.getElementById("projectDescription").value;
@@ -208,7 +208,9 @@ saveProjectBtn.addEventListener("click", () => {
     };
 
     createProjectCard(projectData);
-    saveProject(projectData);
+    await saveProject(projectData);
+
+    location.reload();
 
     document.getElementById("projectName").value = "";
     document.getElementById("projectDescription").value = "";
@@ -235,39 +237,55 @@ function createProjectCard(project) {
     const deleteBtn = card.querySelector(".delete-btn");
 
     deleteBtn.addEventListener("click", () => {
-        card.remove();
-        deleteProject(project.name);
-    });
-
+    card.remove();
+    deleteProject(project.id);
+});
     projectsContainer.appendChild(card);
 }
 
-/* SAVE PROJECT */
-function saveProject(project) {
-
-    let projects = JSON.parse(localStorage.getItem("projects")) || [];
-    projects.push(project);
-
-    localStorage.setItem("projects", JSON.stringify(projects));
-}
 
 /* LOAD PROJECTS */
-function loadProjects() {
+async function loadProjects() {
 
-    let projects = JSON.parse(localStorage.getItem("projects")) || [];
-    projects.forEach(project => {
+    const { data, error } =
+        await client
+            .from("projects")
+            .select("*");
+
+    if (error) {
+        console.log(error);
+        return;
+    }
+
+    data.forEach(project => {
         createProjectCard(project);
     });
 }
 
+/* SAVE PROJECT */
+async function saveProject(project) {
+
+    const { error } =
+        await client
+            .from("projects")
+            .insert([project]);
+
+    if (error) {
+        console.log(error);
+        alert("Project save failed");
+    }
+}
+
 /* DELETE PROJECT */
-function deleteProject(projectName) {
+async function deleteProject(id) {
 
-    let projects = JSON.parse(localStorage.getItem("projects")) || [];
+    const { error } =
+        await client
+            .from("projects")
+            .delete()
+            .eq("id", id);
 
-    projects = projects.filter(
-        project => project.name !== projectName
-    );
-
-    localStorage.setItem("projects", JSON.stringify(projects));
+    if (error) {
+        console.log(error);
+    }
 }
