@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Simran Makan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Simran Makan</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+        </ul>
+    </nav>
+
+    <section class="cert-container">
+
+        <h1>My Certificates</h1>
+
+        <div class="upload-box">
+            <input type="file" id="fileInput" accept="image/*">
+            <button onclick="addImage()">Add Certificate</button>
+        </div>
+
+        <div class="gallery" id="gallery"></div>
+
+    </section>
+
+    <!-- FULLSCREEN MODAL -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img id="modalImg">
+    </div>
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+
+  <h2>Let’s Connect</h2>
+
+  <p>I'm open to internships, collaborations, and exciting 
+    opportunities.</p>
+  <p>Feel free to reach out!.</p>
+
+  <div class="contact-links">
+    <a href="mailto:simranmakan.off@gmail.com">📧 Email Me</a>
+    <a href="https://www.linkedin.com/in/simranmakan" target="_blank">
+        💼 LinkedIn</a>
+    <a href="https://wa.me/918595883881" target="_blank">
+        💬 WhatsApp Me</a>
+  </div>
+
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
