@@ -829,33 +829,49 @@ body {
 
 @media (max-width: 768px) {
 
+    .resume-container,
+    .resume-box,
+    .resume-card {
+        width: 95% !important;
+        max-width: 95% !important;
+        padding: 20px !important;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
     /* HERO CARD */
     .hero-card {
         flex-direction: column;
-        padding: 25px 20px;
+        padding: 25px 25px;   /* 20 se 25 */
         text-align: center;
         gap: 30px;
-        width: 95%;
+        width: 98%;           /* 95% se 98% */
+        max-width: 420px;     /* add this */
+        box-sizing: border-box; /* add this */
     }
 
     /* LEFT + RIGHT */
     .hero-left,
     .hero-right {
         width: 100%;
+        min-width: 0;   /* add this */
     }
 
     /* TEXT */
     .hero-left h1 {
         font-size: 2.2rem;
-        line-height: 1.2;
+        line-height: 0.7;
+        word-break: break-word; /* add this */
     }
 
     .hero-left h2 {
-        font-size: 1.1rem;
+        font-size: 0.1rem;
     }
 
     .hero-left p {
         font-size: 0.95rem;
+        word-break: break-word; /* add this */
     }
 
     /* PHOTO CARD */
@@ -867,7 +883,7 @@ body {
 
     .photo-card img {
         width : 200px;
-        transform: scale(1.25);
+        transform: scale(1.35);
         object-position: top;
     }
 
@@ -917,3 +933,6 @@ body {
 
 }
 
+body {
+    overflow-x: hidden;
+}
